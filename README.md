@@ -29,6 +29,12 @@ Website tournament sepak bola tingkat RW dengan desain modern Notion-style dan f
 
 ## 🌐 Live Demo
 
+### 🚀 Vercel (Recommended)
+Deploy: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mrizkymxx/liga-rw-website)
+
+Live: [Liga RW Website on Vercel](https://liga-rw-website.vercel.app) ⚡
+
+### 📱 GitHub Pages  
 Visit: [Liga RW Website](https://mrizkymxx.github.io/liga-rw-website)
 
 **Admin Access**: `/admin` dengan password: `admin123`
@@ -80,7 +86,16 @@ Website fully responsive dengan breakpoints:
 
 ## 🚀 Deployment
 
-Project di-deploy otomatis ke GitHub Pages setiap push ke main branch.
+### Option 1: Vercel (Recommended) ⚡
+- **Setup**: See [VERCEL-DEPLOY.md](VERCEL-DEPLOY.md)
+- **Features**: Lightning fast, full database support, auto HTTPS
+- **Deploy**: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mrizkymxx/liga-rw-website)
+
+### Option 2: GitHub Pages 📄  
+- **Setup**: See [DEPLOYMENT.md](DEPLOYMENT.md)
+- **Features**: Free hosting, auto-deploy from GitHub
+
+Project di-deploy otomatis setiap push ke main branch.
 
 ## 📄 License
 
