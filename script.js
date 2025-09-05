@@ -23,8 +23,11 @@ async function loadJSONData(filename) {
 
 // Initialize all data
 async function initializeData() {
+    console.log('🚀 Starting data initialization...');
+    
     try {
         // Load all JSON files
+        console.log('📁 Loading JSON files...');
         const [teams, standings, matches, topScorer, yellowCard] = await Promise.all([
             loadJSONData('teams.json'),
             loadJSONData('standings.json'),
@@ -33,6 +36,11 @@ async function initializeData() {
             loadJSONData('yellowcard.json')
         ]);
 
+        // Check if any data failed to load
+        if (!teams || !standings || !matches || !topScorer || !yellowCard) {
+            throw new Error('One or more JSON files failed to load');
+        }
+
         // Store in global object
         appData.teams = teams;
         appData.standings = standings;
@@ -40,11 +48,14 @@ async function initializeData() {
         appData.topScorer = topScorer;
         appData.yellowCard = yellowCard;
 
+        console.log('✅ Data loaded successfully:', appData);
+
         // Initialize UI
         initializeUI();
         
     } catch (error) {
-        console.error('Error initializing data:', error);
+        console.error('❌ Error initializing data:', error);
+        console.log('🔄 Falling back to dummy data...');
         // Fallback to dummy data if JSON fails
         initializeDummyData();
         initializeUI();
@@ -158,40 +169,48 @@ function renderStandings() {
     
     if (!groupABody || !groupBBody || !appData.standings) return;
 
+    console.log('📊 Rendering standings...', appData.standings);
+
     // Render Group A
     groupABody.innerHTML = '';
-    appData.standings.groupA.forEach((team, index) => {
-        groupABody.innerHTML += `
-            <tr>
-                <td><strong>${index + 1}. ${team.team}</strong></td>
-                <td>${team.matches}</td>
-                <td>${team.wins}</td>
-                <td>${team.draws}</td>
-                <td>${team.losses}</td>
-                <td><strong>${team.points}</strong></td>
-            </tr>
-        `;
-    });
+    if (appData.standings.groupA) {
+        appData.standings.groupA.forEach((team, index) => {
+            groupABody.innerHTML += `
+                <tr>
+                    <td><strong>${index + 1}. ${team.team}</strong></td>
+                    <td>${team.matches}</td>
+                    <td>${team.wins}</td>
+                    <td>${team.draws}</td>
+                    <td>${team.losses}</td>
+                    <td><strong>${team.points}</strong></td>
+                </tr>
+            `;
+        });
+    }
 
     // Render Group B
     groupBBody.innerHTML = '';
-    appData.standings.groupB.forEach((team, index) => {
-        groupBBody.innerHTML += `
-            <tr>
-                <td><strong>${index + 1}. ${team.team}</strong></td>
-                <td>${team.matches}</td>
-                <td>${team.wins}</td>
-                <td>${team.draws}</td>
-                <td>${team.losses}</td>
-                <td><strong>${team.points}</strong></td>
-            </tr>
-        `;
-    });
+    if (appData.standings.groupB) {
+        appData.standings.groupB.forEach((team, index) => {
+            groupBBody.innerHTML += `
+                <tr>
+                    <td><strong>${index + 1}. ${team.team}</strong></td>
+                    <td>${team.matches}</td>
+                    <td>${team.wins}</td>
+                    <td>${team.draws}</td>
+                    <td>${team.losses}</td>
+                    <td><strong>${team.points}</strong></td>
+                </tr>
+            `;
+        });
+    }
 }
 
 function renderSchedule() {
     const scheduleList = document.getElementById('schedule-list');
     if (!scheduleList || !appData.matches || !appData.matches.schedule) return;
+
+    console.log('📅 Rendering schedule...', appData.matches.schedule);
 
     scheduleList.innerHTML = '';
     appData.matches.schedule.forEach(match => {
@@ -214,6 +233,8 @@ function renderResults() {
     const resultsList = document.getElementById('results-list');
     if (!resultsList || !appData.matches || !appData.matches.results) return;
 
+    console.log('🏆 Rendering results...', appData.matches.results);
+
     resultsList.innerHTML = '';
     appData.matches.results.forEach(match => {
         resultsList.innerHTML += `
@@ -231,8 +252,10 @@ function renderResults() {
 }
 
 function renderTopScorer() {
-    const topScorerBody = document.getElementById('top-scorer-body');
+    const topScorerBody = document.getElementById('topscorer-list');
     if (!topScorerBody || !appData.topScorer) return;
+
+    console.log('⚽ Rendering top scorers...', appData.topScorer);
 
     topScorerBody.innerHTML = '';
     appData.topScorer.forEach(player => {
@@ -249,8 +272,10 @@ function renderTopScorer() {
 }
 
 function renderYellowCard() {
-    const yellowCardBody = document.getElementById('yellow-card-body');
+    const yellowCardBody = document.getElementById('yellowcard-list');
     if (!yellowCardBody || !appData.yellowCard) return;
+
+    console.log('🟨 Rendering yellow cards...', appData.yellowCard);
 
     yellowCardBody.innerHTML = '';
     appData.yellowCard.forEach(player => {
