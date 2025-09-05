@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Liga RW</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #37352f;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #37352f;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e9e9e7;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #37352f;
+            font-weight: 700;
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e9e9e7;
+        }
+
+        nav a {
+            background: #ffffff;
+            color: #37352f;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+            font-weight: 500;
+            border: 2px solid #37352f;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: #f7f6f3;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        #admin-login {
+            text-align: center;
+            margin-top: 3rem;
+            background-color: #fafafa;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 2px solid #37352f;
+        }
+
+        #admin-login h2 {
+            color: #37352f;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #37352f;
+            padding-bottom: 0.5rem;
+        }
+
+        #admin-content {
+            display: none;
+        }
+
+        section {
+            background-color: #fafafa;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 2px solid #37352f;
+        }
+
+        section h2 {
+            color: #37352f;
+            border-bottom: 2px solid #37352f;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #37352f;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            box-sizing: border-box;
+            border: 2px solid #37352f;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #37352f;
+            transition: all 0.15s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #37352f;
+            background-color: #f7f6f3;
+        }
+
+        button {
+            background-color: #37352f;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #37352f;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: #37352f;
+        }
+
+        .group-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .group-container > div {
+            flex: 1;
+            min-width: 300px;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 2px solid #37352f;
+        }
+
+        .group-container h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #37352f;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        table th, 
+        table td {
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            border-bottom: 1px solid #37352f;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #f7f6f3;
+            color: #37352f;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table tbody tr:hover {
+            background-color: #f7f6f3;
+        }
+
+        table input {
+            border: 1px solid #e9e9e7;
+            padding: 0.3rem;
+            text-align: center;
+            border-radius: 4px;
+            width: 60px;
+        }
+
+        .save-standings-btn {
+            background-color: #37352f;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 0.6rem 1rem;
+        }
+
+        #manage-results-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #manage-results-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #e9e9e7;
+        }
+
+        #manage-results-list li:hover {
+            background-color: #f7f6f3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: #f7f6f3;
+            color: #787774;
+            border-top: 1px solid #e9e9e7;
+            font-size: 13px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            #admin-login {
+                margin-top: 2rem;
+                padding: 2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .group-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .group-container > div {
+                min-width: unset;
+            }
+
+            table th, 
+            table td {
+                padding: 0.5rem 0.3rem;
+                font-size: 12px;
+            }
+
+            #manage-results-list li {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard Admin</h1>
+        <!-- Akses admin melalui URL: /admin atau langsung admin.html -->
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <main>
+        <div id="admin-login">
+            <h2>Masukkan Kata Sandi</h2>
+            <input type="password" id="password-input" placeholder="Password...">
+            <button id="login-button">Login</button>
+        </div>
+
+        <div id="admin-content">
+            <section id="add-result">
+                <h2>Tambah Hasil Pertandingan Baru</h2>
+                <form id="add-result-form">
+                    <div class="form-group">
+                        <label for="date">Tanggal</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamA">Tim Tuan Rumah</label>
+                        <select id="teamA" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="scoreA">Skor Tim Tuan Rumah</label>
+                        <input type="number" id="scoreA" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamB">Tim Tamu</label>
+                        <select id="teamB" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="scoreB">Skor Tim Tamu</label>
+                        <input type="number" id="scoreB" min="0" required>
+                    </div>
+                    <button type="submit">Simpan Hasil</button>
+                </form>
+            </section>
+
+            <section id="manage-results">
+                <h2>Kelola Hasil Pertandingan</h2>
+                <ul id="manage-results-list">
+                    <!-- Daftar hasil untuk dikelola akan diisi oleh admin.js -->
+                </ul>
+            </section>
+
+            <section id="manage-standings">
+                <h2>Kelola Klasemen</h2>
+                <div class="group-container">
+                    <div id="admin-group-a">
+                        <h3>Grup A</h3>
+                        <table id="standings-table-a">
+                            <thead>
+                                <tr>
+                                    <th>Tim</th>
+                                    <th>M</th>
+                                    <th>M</th>
+                                    <th>S</th>
+                                    <th>K</th>
+                                    <th>Poin</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-standings-a">
+                                <!-- Diisi oleh admin.js -->
+                            </tbody>
+                        </table>
+                        <button class="save-standings-btn" data-group="A">Simpan Klasemen Grup A</button>
+                    </div>
+                    <div id="admin-group-b">
+                        <h3>Grup B</h3>
+                        <table id="standings-table-b">
+                            <thead>
+                                <tr>
+                                    <th>Tim</th>
+                                    <th>M</th>
+                                    <th>M</th>
+                                    <th>S</th>
+                                    <th>K</th>
+                                    <th>Poin</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-standings-b">
+                                <!-- Diisi oleh admin.js -->
+                            </tbody>
+                        </table>
+                        <button class="save-standings-btn" data-group="B">Simpan Klasemen Grup B</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Liga Kecamatan Tahunan</p>
+    </footer>
+    <!-- Memuat script utama untuk data dummy, dan script admin untuk logika halaman ini -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

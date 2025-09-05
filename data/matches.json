@@ -1,0 +1,86 @@
+{
+  "schedule": [
+    {
+      "id": 1,
+      "date": "2025-01-15",
+      "time": "14:00",
+      "teamA": "Tim Mawar",
+      "teamB": "Tim Melati",
+      "group": "A",
+      "status": "scheduled"
+    },
+    {
+      "id": 2,
+      "date": "2025-01-15",
+      "time": "16:00",
+      "teamA": "Tim Anggrek",
+      "teamB": "Tim Tulip",
+      "group": "A",
+      "status": "scheduled"
+    },
+    {
+      "id": 3,
+      "date": "2025-01-16",
+      "time": "14:00",
+      "teamA": "Tim Sakura",
+      "teamB": "Tim Teratai",
+      "group": "B",
+      "status": "scheduled"
+    },
+    {
+      "id": 4,
+      "date": "2025-01-16",
+      "time": "16:00",
+      "teamA": "Tim Dahlia",
+      "teamB": "Tim Kenanga",
+      "group": "B",
+      "status": "scheduled"
+    }
+  ],
+  "results": [
+    {
+      "id": 5,
+      "date": "2025-01-10",
+      "time": "14:00",
+      "teamA": "Tim Mawar",
+      "teamB": "Tim Anggrek",
+      "scoreA": 2,
+      "scoreB": 1,
+      "group": "A",
+      "status": "finished"
+    },
+    {
+      "id": 6,
+      "date": "2025-01-10",
+      "time": "16:00",
+      "teamA": "Tim Melati",
+      "teamB": "Tim Tulip",
+      "scoreA": 3,
+      "scoreB": 0,
+      "group": "A",
+      "status": "finished"
+    },
+    {
+      "id": 7,
+      "date": "2025-01-11",
+      "time": "14:00",
+      "teamA": "Tim Sakura",
+      "teamB": "Tim Dahlia",
+      "scoreA": 3,
+      "scoreB": 1,
+      "group": "B",
+      "status": "finished"
+    },
+    {
+      "id": 8,
+      "date": "2025-01-11",
+      "time": "16:00",
+      "teamA": "Tim Teratai",
+      "teamB": "Tim Kenanga",
+      "scoreA": 1,
+      "scoreB": 1,
+      "group": "B",
+      "status": "finished"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "groupA": [
+    {
+      "id": 1,
+      "name": "Tim Mawar",
+      "logo": "🌹"
+    },
+    {
+      "id": 2,
+      "name": "Tim Melati",
+      "logo": "🌸"
+    },
+    {
+      "id": 3,
+      "name": "Tim Anggrek",
+      "logo": "🌺"
+    },
+    {
+      "id": 4,
+      "name": "Tim Tulip",
+      "logo": "🌷"
+    }
+  ],
+  "groupB": [
+    {
+      "id": 5,
+      "name": "Tim Sakura",
+      "logo": "🌸"
+    },
+    {
+      "id": 6,
+      "name": "Tim Teratai",
+      "logo": "🏵️"
+    },
+    {
+      "id": 7,
+      "name": "Tim Dahlia",
+      "logo": "🌻"
+    },
+    {
+      "id": 8,
+      "name": "Tim Kenanga",
+      "logo": "🌼"
+    }
+  ]
+}

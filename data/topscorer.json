@@ -1,0 +1,37 @@
+[
+  {
+    "rank": 1,
+    "name": "Ahmad Rizki",
+    "team": "Tim Sakura",
+    "goals": 5,
+    "matches": 3
+  },
+  {
+    "rank": 2,
+    "name": "Budi Santoso",
+    "team": "Tim Mawar",
+    "goals": 4,
+    "matches": 3
+  },
+  {
+    "rank": 3,
+    "name": "Cahyo Nugroho",
+    "team": "Tim Melati",
+    "goals": 3,
+    "matches": 3
+  },
+  {
+    "rank": 4,
+    "name": "Dedi Kurniawan",
+    "team": "Tim Teratai",
+    "goals": 2,
+    "matches": 3
+  },
+  {
+    "rank": 5,
+    "name": "Eko Prasetyo",
+    "team": "Tim Anggrek",
+    "goals": 2,
+    "matches": 3
+  }
+]
