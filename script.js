@@ -206,24 +206,47 @@ function renderStandings() {
     }
 }
 
+// Helper function to get team data including logo
+function getTeamData(teamName) {
+    if (!appData.teams) return null;
+    
+    // Search in both groups
+    const allTeams = [...(appData.teams.groupA || []), ...(appData.teams.groupB || [])];
+    return allTeams.find(team => team.name === teamName);
+}
+
 function renderSchedule() {
-    const scheduleList = document.getElementById('schedule-list');
-    if (!scheduleList || !appData.matches || !appData.matches.schedule) return;
+    const scheduleGrid = document.getElementById('schedule-grid');
+    if (!scheduleGrid || !appData.matches || !appData.matches.schedule) return;
 
     console.log('📅 Rendering schedule...', appData.matches.schedule);
 
-    scheduleList.innerHTML = '';
+    scheduleGrid.innerHTML = '';
     appData.matches.schedule.forEach(match => {
-        scheduleList.innerHTML += `
-            <div class="schedule-item">
-                <div class="schedule-date">${formatDate(match.date)}</div>
-                <div class="schedule-time">${match.time}</div>
-                <div class="schedule-match">
-                    <span class="team">${match.teamA}</span>
-                    <span class="vs">VS</span>
-                    <span class="team">${match.teamB}</span>
+        const teamAData = getTeamData(match.teamA);
+        const teamBData = getTeamData(match.teamB);
+        
+        scheduleGrid.innerHTML += `
+            <div class="match-card">
+                <div class="match-status status-scheduled">Scheduled</div>
+                <div class="match-header">
+                    <div class="match-date">📅 ${formatDate(match.date)}</div>
+                    <div class="match-time">⏰ ${match.time}</div>
                 </div>
-                <div class="schedule-group">Grup ${match.group}</div>
+                <div class="match-teams">
+                    <div class="team-info">
+                        <span class="team-logo">${teamAData?.logo || '⚽'}</span>
+                        <div class="team-name">${match.teamA}</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="team-info">
+                        <span class="team-logo">${teamBData?.logo || '⚽'}</span>
+                        <div class="team-name">${match.teamB}</div>
+                    </div>
+                </div>
+                <div class="match-group">
+                    <span class="group-badge group-${match.group.toLowerCase()}">Grup ${match.group}</span>
+                </div>
             </div>
         `;
     });

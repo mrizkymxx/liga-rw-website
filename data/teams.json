@@ -2,45 +2,45 @@
   "groupA": [
     {
       "id": 1,
-      "name": "Tim Mawar",
-      "logo": "🌹"
+      "name": "RW 01",
+      "logo": "🔴"
     },
     {
       "id": 2,
-      "name": "Tim Melati",
-      "logo": "🌸"
+      "name": "RW 02",
+      "logo": "🟡"
     },
     {
       "id": 3,
-      "name": "Tim Anggrek",
-      "logo": "🌺"
+      "name": "RW 03",
+      "logo": "🟢"
     },
     {
       "id": 4,
-      "name": "Tim Tulip",
-      "logo": "🌷"
+      "name": "RW 04",
+      "logo": "🔵"
     }
   ],
   "groupB": [
     {
       "id": 5,
-      "name": "Tim Sakura",
-      "logo": "🌸"
+      "name": "RW 05",
+      "logo": "🟠"
     },
     {
       "id": 6,
-      "name": "Tim Teratai",
-      "logo": "🏵️"
+      "name": "RW 06",
+      "logo": "🟣"
     },
     {
       "id": 7,
-      "name": "Tim Dahlia",
-      "logo": "🌻"
+      "name": "RW 07",
+      "logo": "🟤"
     },
     {
       "id": 8,
-      "name": "Tim Kenanga",
-      "logo": "🌼"
+      "name": "RW 08",
+      "logo": "⚫"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "groupA": [
     {
-      "team": "Tim Mawar",
+      "team": "RW 01",
       "matches": 3,
       "wins": 2,
       "draws": 1,
@@ -12,7 +12,7 @@
       "goalDifference": 4
     },
     {
-      "team": "Tim Melati",
+      "team": "RW 02",
       "matches": 3,
       "wins": 2,
       "draws": 0,
@@ -23,7 +23,7 @@
       "goalDifference": 2
     },
     {
-      "team": "Tim Anggrek",
+      "team": "RW 03",
       "matches": 3,
       "wins": 1,
       "draws": 1,
@@ -34,7 +34,7 @@
       "goalDifference": 0
     },
     {
-      "team": "Tim Tulip",
+      "team": "RW 04",
       "matches": 3,
       "wins": 0,
       "draws": 0,
@@ -47,7 +47,7 @@
   ],
   "groupB": [
     {
-      "team": "Tim Sakura",
+      "team": "RW 05",
       "matches": 3,
       "wins": 3,
       "draws": 0,
@@ -58,7 +58,7 @@
       "goalDifference": 6
     },
     {
-      "team": "Tim Teratai",
+      "team": "RW 06",
       "matches": 3,
       "wins": 1,
       "draws": 2,
@@ -69,7 +69,7 @@
       "goalDifference": 1
     },
     {
-      "team": "Tim Dahlia",
+      "team": "RW 07",
       "matches": 3,
       "wins": 1,
       "draws": 1,
@@ -80,7 +80,7 @@
       "goalDifference": -1
     },
     {
-      "team": "Tim Kenanga",
+      "team": "RW 08",
       "matches": 3,
       "wins": 0,
       "draws": 1,
