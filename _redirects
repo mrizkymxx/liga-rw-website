@@ -1,0 +1,6 @@
+# Netlify redirects file
+/admin /admin.html 200
+/admin/* /admin.html 200
+
+# SPA fallback
+/* /index.html 200

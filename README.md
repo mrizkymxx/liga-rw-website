@@ -1,113 +1,176 @@
-# Liga RW - Website Tournament Management
+# ⚽ Liga RW - Football Tournament Management System
 
-Website tournament sepak bola tingkat RW dengan desain modern Notion-style dan fitur admin yang lengkap.
+A modern, responsive web application for managing neighborhood football tournaments with an intuitive admin panel and clean Notion-inspired design.
 
-## 🚀 Features
+## ✨ Overview
 
-- **Halaman Utama**: Klasemen, jadwal, hasil, top scorer, dan kartu kuning
-- **Admin Panel**: Akses melalui `/admin` untuk mengelola data tournament
-- **Design Modern**: Notion-inspired UI dengan animasi floating soccer balls
-- **Responsive**: Optimized untuk desktop dan mobile
-- **Real-time Data**: JSON-based database yang mudah dikelola
+Liga RW adalah platform web yang dirancang khusus untuk mengelola turnamen sepak bola tingkat RW/kelurahan. Dengan antarmuka yang bersih dan fitur lengkap, website ini memudahkan pengelolaan data pertandingan, klasemen, dan statistik pemain secara real-time.
 
-## 📁 Project Structure
+## 🌟 Key Features
+
+### For Visitors
+- **Live Standings** - Klasemen real-time untuk Grup A dan Grup B
+- **Match Schedule** - Jadwal lengkap dengan hasil pertandingan
+- **Top Scorer Board** - Statistik pencetak gol terbanyak
+- **Disciplinary Records** - Data kartu kuning dan statistik disiplin
+- **Mobile Responsive** - Tampilan optimal di semua perangkat
+
+### For Administrators
+- **Match Management** - Tambah, edit, dan update hasil pertandingan
+- **Live Score Updates** - Update skor secara real-time
+- **Player Statistics** - Kelola data top scorer dan kartu kuning
+- **Team Management** - Organisasi tim dalam grup
+- **Data Backup** - Export/import data dalam format JSON
+
+## 🎨 Design Philosophy
+
+Website ini mengadopsi desain modern yang terinspirasi dari Notion dengan:
+- **Clean Typography** - Font yang mudah dibaca dan profesional
+- **Floating Animations** - Animasi bola sepak yang halus dan tidak mengganggu
+- **Color Consistency** - Skema warna yang konsisten dan eye-friendly
+- **Intuitive Navigation** - Navigasi yang sederhana dan mudah dipahami
+
+## � Project Architecture
 
 ```
-├── index.html          # Halaman utama tournament
-├── admin.html          # Dashboard admin
-├── style.css           # Styling Notion-theme
-├── script.js           # Logic halaman utama
-├── admin.js            # Logic admin panel
-├── data/
-│   ├── teams.json      # Data tim
-│   ├── matches.json    # Data pertandingan
-│   ├── standings.json  # Klasemen
-│   ├── topscorer.json  # Top scorer
-│   └── yellowcard.json # Kartu kuning
-└── README.md
+liga-rw-website/
+├── index.html          # Homepage dengan semua fitur utama
+├── admin.html          # Dashboard admin untuk pengelolaan data
+├── style.css           # Styling dengan tema Notion modern
+├── script.js           # Frontend logic untuk halaman utama
+├── admin.js            # Admin panel functionality
+├── netlify.toml        # Netlify deployment configuration
+├── _redirects          # Netlify redirect rules
+└── data/
+    ├── teams.json      # Database tim dan grup
+    ├── matches.json    # Jadwal dan hasil pertandingan
+    ├── standings.json  # Klasemen terkini
+    ├── topscorer.json  # Statistik top scorer
+    └── yellowcard.json # Data kartu kuning
 ```
 
-## 🌐 Live Demo
+## 🚀 Getting Started
 
-### 🚀 Vercel (Recommended)
-Deploy: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mrizkymxx/liga-rw-website)
+### Quick Setup
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mrizkymxx/liga-rw-website.git
+   cd liga-rw-website
+   ```
 
-Live: [Liga RW Website on Vercel](https://liga-rw-website.vercel.app) ⚡
+2. **Open in browser**
+   - Double-click `index.html` untuk membuka langsung
+   - Atau gunakan live server untuk development
 
-### 📱 GitHub Pages  
-Visit: [Liga RW Website](https://mrizkymxx.github.io/liga-rw-website)
+3. **Access admin panel**
+   - Buka `/admin.html` atau tambahkan `#admin` di URL
+   - Default password: `admin123`
 
-**Admin Access**: `/admin` dengan password: `admin123`
-
-## 🎨 Design Features
-
-- Clean Notion-style interface
-- Floating soccer ball animations
-- Responsive grid layouts
-- Modern typography dan colors
-- Smooth CSS transitions
-
-## 🛠️ Local Development
-
-1. Clone repository:
+### Development Server
+Untuk menghindari CORS issues saat development:
 ```bash
-git clone https://github.com/mrizkymxx/liga-rw-website.git
-cd liga-rw-website
+# Menggunakan Python
+python -m http.server 8000
+
+# Menggunakan Node.js
+npx live-server --port=3000
+
+# Menggunakan PHP
+php -S localhost:8000
 ```
 
-2. Open with live server atau langsung buka `index.html`
+## 🌐 Deployment to Netlify
 
-3. Access admin: buka `/admin.html` atau tambahkan `#admin` di URL
+### One-Click Deployment
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mrizkymxx/liga-rw-website)
 
-## 📝 Admin Features
+### Manual Deployment
+1. **Connect to GitHub**:
+   - Login ke [netlify.com](https://netlify.com)
+   - Klik "New site from Git"
+   - Pilih repository Anda
+   - Deploy settings otomatis terdeteksi ✨
 
-- Tambah/edit hasil pertandingan
-- Update klasemen grup A & B  
-- Kelola data top scorer
-- Update kartu kuning
-- Real-time data synchronization
+2. **Custom Domain** (opsional):
+   - Buka site settings
+   - Tambahkan custom domain
+   - Update DNS records
 
-## 🔧 Database Management
+3. **Go Live**: Site akan live dalam 1-2 menit! 🚀
 
-Project menggunakan JSON files untuk data storage yang mudah di-maintain:
+**Lihat [NETLIFY-DEPLOY.md](NETLIFY-DEPLOY.md) untuk panduan lengkap**
 
-- `data/teams.json` - Daftar tim dan grup
-- `data/matches.json` - Jadwal dan hasil pertandingan
-- `data/standings.json` - Klasemen terkini
-- `data/topscorer.json` - Statistik pencetak gol
-- `data/yellowcard.json` - Data kartu kuning
+### Features on Netlify
+- ⚡ Lightning fast with global CDN
+- 🔒 HTTPS otomatis
+- 🔄 Auto-deploy dari GitHub
+- 📊 Form handling (untuk kontak)
+- 📈 Analytics built-in
 
-## 📱 Mobile Support
+## � Configuration
 
-Website fully responsive dengan breakpoints:
-- Desktop: 1024px+
-- Tablet: 768px - 1023px  
-- Mobile: < 768px
+### Admin Access
+Edit file `admin.js` untuk mengubah password:
+```javascript
+// Line ~15
+const ADMIN_PASSWORD = 'your-new-password';
+```
 
-## 🚀 Deployment
+### Team Configuration
+Edit `data/teams.json` untuk mengatur tim dan grup:
+```json
+{
+  "grupA": [
+    {"id": 1, "name": "Tim Alpha", "logo": "🔴"},
+    {"id": 2, "name": "Tim Beta", "logo": "🟡"}
+  ],
+  "grupB": [
+    {"id": 3, "name": "Tim Gamma", "logo": "🟢"},
+    {"id": 4, "name": "Tim Delta", "logo": "🔵"}
+  ]
+}
+```
 
-### Option 1: Vercel (Recommended) ⚡
-- **Setup**: See [VERCEL-DEPLOY.md](VERCEL-DEPLOY.md)
-- **Features**: Lightning fast, full database support, auto HTTPS
-- **Deploy**: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mrizkymxx/liga-rw-website)
+## � Data Management
 
-### Option 2: GitHub Pages 📄  
-- **Setup**: See [DEPLOYMENT.md](DEPLOYMENT.md)
-- **Features**: Free hosting, auto-deploy from GitHub
+Semua data disimpan dalam format JSON yang mudah di-maintain:
 
-Project di-deploy otomatis setiap push ke main branch.
+- **teams.json** - Struktur tim dan grup
+- **matches.json** - Jadwal dan hasil lengkap
+- **standings.json** - Klasemen dengan poin, gol, dan selisih gol
+- **topscorer.json** - Statistik individu pemain
+- **yellowcard.json** - Catatan pelanggaran dan kartu
 
-## 📄 License
+## 📱 Browser Support
 
-MIT License - feel free to use for your own tournaments!
+- ✅ Chrome 80+
+- ✅ Firefox 75+
+- ✅ Safari 13+
+- ✅ Edge 80+
+- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## 🤝 Contributing
 
-1. Fork repository
-2. Create feature branch
-3. Commit changes
-4. Push dan create Pull Request
+Kontribusi sangat diterima! Untuk berkontribusi:
+
+1. **Fork** repository ini
+2. **Create feature branch**: `git checkout -b feature/AmazingFeature`
+3. **Commit changes**: `git commit -m 'Add some AmazingFeature'`
+4. **Push to branch**: `git push origin feature/AmazingFeature`
+5. **Open Pull Request**
+
+## � License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🙏 Acknowledgments
+
+- Design inspiration dari [Notion](https://notion.so)
+- Icons dari Unicode Emoji
+- Tested pada Liga RW Kecamatan Tahunan 2025
 
 ---
 
-**Liga Kecamatan Tahunan 2025** 🏆
+**Made with ❤️ for local football communities**
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mrizkymxx/liga-rw-website)
